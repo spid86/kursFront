@@ -1,0 +1,22 @@
+<div class="scientist-dialog">
+    <h2>{{ data ? 'Edit Scientist' : 'Create Scientist' }}</h2>
+    <form>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Scientist Name" [(ngModel)]="scientist.scientistName" name="scientistName" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Specialization" [(ngModel)]="scientist.specialization" name="specialization" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput type="number" placeholder="Number of Curated Missions" [(ngModel)]="scientist.numberOfCuratedMissions" name="numberOfCuratedMissions" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Status" [(ngModel)]="scientist.status" name="status" required>
+      </mat-form-field>
+    </form>
+    <div class="actions">
+      <button mat-button (click)="onCancelClick()">Cancel</button>
+      <button mat-button color="primary" (click)="onSaveClick()">Save</button>
+    </div>
+  </div>
+  

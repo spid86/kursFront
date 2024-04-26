@@ -1,0 +1,62 @@
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$font-family: 'Roboto', sans-serif;
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+  height: 100vh;
+}
+
+.login-form {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 30%;
+  max-height: 288px;
+  width: 100%;
+  font-family: $font-family;
+}
+
+h2 {
+  color: $primary-color;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+}
+
+button {
+  background-color: $primary-color;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 18px;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}

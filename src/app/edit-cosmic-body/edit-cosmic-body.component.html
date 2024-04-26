@@ -1,0 +1,16 @@
+<div class="cosmic-body-dialog">
+    <h2>{{ data ? 'Edit Cosmic Body' : 'Create Cosmic Body' }}</h2>
+    <form>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Body Name" [(ngModel)]="cosmicBody.bodyName" name="bodyName" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Body Type" [(ngModel)]="cosmicBody.bodyType" name="bodyType" required>
+      </mat-form-field>
+    </form>
+    <div class="actions">
+      <button mat-button (click)="onCancelClick()">Cancel</button>
+      <button mat-button color="primary" (click)="onSaveClick()">Save</button>
+    </div>
+  </div>
+  

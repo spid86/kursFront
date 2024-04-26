@@ -1,0 +1,26 @@
+.telescope-dialog {
+    padding: 20px;
+  
+    h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      color: #333;
+    }
+  
+    form {
+      .full-width {
+        width: 100%;
+      }
+    }
+  
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+  
+      button {
+        margin-left: 10px;
+      }
+    }
+  }

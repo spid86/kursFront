@@ -1,0 +1,15 @@
+<!-- menu.component.html -->
+<div class="menu">
+    <ul class="left">
+      <li><a routerLink="/scientists">Scientists</a></li>
+      <li><a routerLink="/missions">Missions</a></li>
+      <li><a routerLink="/telescopes">Telescopes</a></li>
+      <li><a routerLink="/vessels">Vessels</a></li>
+      <li><a routerLink="/cosmic-bodies">Cosmic Bodies</a></li>
+    </ul>
+    <div class="right">
+      <span class="user-role">Role: {{ currentUserRole }}</span>
+      <button (click)="logout()">Logout</button>
+    </div>
+  </div>
+  

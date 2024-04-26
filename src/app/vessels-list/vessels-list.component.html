@@ -1,0 +1,22 @@
+<div class="vessel-list">
+    <h2>Vessel List</h2>
+    <div *ngIf="vessels.length === 0" class="empty-state" (click)="addNewVessel()">
+      Click here to add a new vessel
+    </div>
+    <div *ngFor="let vessel of vessels; let i = index" class="vessel-item" (click)="editVessel(vessel)">
+      <div class="vessel-details">
+        <h3>{{ vessel.vesselName }}</h3>
+        <p>Type: {{ vessel.vesselType }}</p>
+        <p>Launch Date: {{ vessel.vesselLaunchDate | date }}</p>
+        <p>Status: {{ vessel.vesselStatus }}</p>
+      </div>
+      <div class="actions">
+        <button (click)="goToMissions(vessel.vesselId)">View Missions</button>
+        <button (click)="onDelete(vessel.vesselId, i);$event.stopPropagation()" class="delete-btn">Delete</button>
+      </div>
+    </div>
+    <div class="add-vessel" (click)="addNewVessel()">
+      Add Vessel
+    </div>
+  </div>
+  

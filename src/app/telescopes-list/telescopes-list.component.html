@@ -1,0 +1,23 @@
+<div class="telescope-list">
+    <h2>Telescope List</h2>
+    <div *ngIf="telescopes.length === 0" class="empty-state" (click)="addNewTelescope()">
+      Click here to add a new telescope
+    </div>
+    <div *ngFor="let telescope of telescopes; let i = index" class="telescope-item" (click)="editTelescope(telescope)">
+      <div class="telescope-details">
+        <h3>{{ telescope.telescopeType }}</h3>
+        <p>Launch Date: {{ telescope.telescopeLaunchDate | date }}</p>
+        <p>Mirror Size: {{ telescope.mirrorSize }}</p>
+        <p>Observed Area: {{ telescope.observedArea }}</p>
+      </div>
+      <div class="actions">
+        <button (click)="goToMissions(telescope.telescopeId)">View Missions</button>
+        <button (click)="goToScientists(telescope.telescopeId)">View Scientists</button>
+        <button (click)="onDelete(telescope.telescopeId, i);$event.stopPropagation()" class="delete-btn">Delete</button>
+      </div>
+    </div>
+    <div class="add-telescope" (click)="addNewTelescope()">
+      Add Telescope
+    </div>
+  </div>
+  

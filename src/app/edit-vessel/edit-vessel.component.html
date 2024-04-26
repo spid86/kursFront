@@ -1,0 +1,24 @@
+<div class="vessel-dialog">
+    <h2>{{ data ? 'Edit Vessel' : 'Create Vessel' }}</h2>
+    <form>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Vessel Name" [(ngModel)]="vessel.vesselName" name="vesselName" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Vessel Type" [(ngModel)]="vessel.vesselType" name="vesselType" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput [matDatepicker]="picker" placeholder="Launch Date" [(ngModel)]="vessel.vesselLaunchDate" name="vesselLaunchDate" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Vessel Status" [(ngModel)]="vessel.vesselStatus" name="vesselStatus" required>
+      </mat-form-field>
+    </form>
+    <div class="actions">
+      <button mat-button (click)="onCancelClick()">Cancel</button>
+      <button mat-button color="primary" (click)="onSaveClick()">Save</button>
+    </div>
+  </div>
+  

@@ -1,0 +1,22 @@
+<div class="mission-dialog">
+    <h2>{{ data ? 'Edit Mission' : 'Create Mission' }}</h2>
+    <form>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Mission Name" [(ngModel)]="mission.missionName" name="missionName" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput type="number" placeholder="Planned Duration (months)" [(ngModel)]="mission.plannedDuration" name="plannedDuration" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Mission Status" [(ngModel)]="mission.missionStatus" name="missionStatus" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <textarea matInput placeholder="Mission Objective" [(ngModel)]="mission.missionObjective" name="missionObjective" required></textarea>
+      </mat-form-field>
+    </form>
+    <div class="actions">
+      <button mat-button (click)="onCancelClick()">Cancel</button>
+      <button mat-button color="primary" (click)="onSaveClick()">Save</button>
+    </div>
+  </div>
+  

@@ -1,0 +1,25 @@
+<div class="mission-list">
+    <h2>Mission List</h2>
+    <div *ngIf="missions.length === 0" class="empty-state" (click)="addNewMission()">
+      Click here to add a new mission
+    </div>
+    <div *ngFor="let mission of missions; let i = index" class="mission-item" (click)="editMission(mission)">
+      <div class="mission-details">
+        <h3>{{ mission.missionName }}</h3>
+        <p>Planned Duration: {{ mission.plannedDuration }} months</p>
+        <p>Status: {{ mission.missionStatus }}</p>
+        <p>Objective: {{ mission.missionObjective }}</p>
+      </div>
+      <div class="actions">
+        <button (click)="goToScientists(mission.missionId)">View Scientists</button>
+        <button (click)="goToCosmicBodies(mission.missionId)">View Cosmic Bodies</button>
+        <button (click)="goToTelescope(mission.missionId)">View Telescope</button>
+        <button (click)="goToVessel(mission.missionId)">View Vessel</button>
+        <button (click)="onDelete(mission.missionId, i);$event.stopPropagation()" class="delete-btn">Delete</button>
+      </div>
+    </div>
+    <div class="add-mission" (click)="addNewMission()">
+      Add Mission
+    </div>
+  </div>
+  

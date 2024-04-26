@@ -1,0 +1,20 @@
+<div class="cosmic-body-list">
+    <h2>Cosmic Body List</h2>
+    <div *ngIf="cosmicBodies.length === 0" class="empty-state" (click)="addNewCosmicBody()">
+      Click here to add a new cosmic body
+    </div>
+    <div *ngFor="let cosmicBody of cosmicBodies; let i = index" class="cosmic-body-item" (click)="editCosmicBody(cosmicBody)" >
+      <div class="cosmic-body-details">
+        <h3>{{ cosmicBody.bodyName }}</h3>
+        <p>Type: {{ cosmicBody.bodyType }}</p>
+      </div>
+      <div class="actions">
+        <button (click)="goToMissions(cosmicBody.bodyId)">View Missions</button>
+        <!-- Add buttons for other related entities as needed -->
+        <button (click)="onDelete(cosmicBody.bodyId, i); $event.stopPropagation()" class="delete-btn">Delete</button>
+      </div>
+    </div>
+    <div class="add-cosmic-body" (click)="addNewCosmicBody()">
+      Add Cosmic Body
+    </div>
+</div>

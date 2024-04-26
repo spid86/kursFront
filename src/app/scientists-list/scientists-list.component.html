@@ -1,0 +1,23 @@
+<div class="scientist-list">
+    <h2>Scientist List</h2>
+    <div *ngFor="let scientist of scientists; let i = index" class="scientist-item" (click)="editScientist(scientist)">
+      <div class="scientist-details">
+        <h3>{{ scientist.scientistName }}</h3>
+        <p>Specialization: {{ scientist.specialization }}</p>
+        <p>Number of Curated Missions: {{ scientist.numberOfCuratedMissions }}</p>
+        <p>Status: {{ scientist.status }}</p>
+      </div>
+      <div class="actions">
+        <button (click)="goToMissions(scientist.scientistId)">View Missions</button>
+        <button (click)="goToTelescopes(scientist.scientistId)">View Telescopes</button>
+        <button (click)="onDelete(scientist.scientistId, i);$event.stopPropagation()" class="delete-btn">Delete</button>
+        
+      </div>
+    </div>
+    <div class="add-scientist" (click)="isRoutedFromTelescopeList() ? addExistingScientistsToTelescope() : addNewScientist()">
+      Add Scientist
+    </div>
+    
+  </div>
+  
+  
